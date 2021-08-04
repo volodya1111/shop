@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <a href="{% url 'add-phone' %}" class="select">
+        <button>Добавить телефоны</button>
+    </a>
+
+    <a href="{% url 'add-laptop' %}" class="select">
+        <button>Добавить ноутбуки</button>
+    </a>
+
+    <a href="{% url 'add-watch' %}" class="select">
+        <button>Добавить часы</button>
+    </a>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'template.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="element">
+        <div class="element-grid">
+            <div class="element-img animate__animated animate__fadeInLeft">
+                <img src="{{ element.image.url }}" alt="">
+            </div>
+            <div class="element-info animate__animated animate__fadeInRight">
+                <h1>{{ element.name }}</h1>
+                <h3>Цвет {{ element.color }}</h3>
+                <h3>Память {{ element.memory }}</h3>
+                <h3>Цена {{ element.price }}</h3>
+                <p>{{ element.description }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'template.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        {% for item in phone %}
+
+            <div class="item animate__animated animate__fadeIn">
+                <a class="shop-item" href="{% url 'phone-detail' item.id %}">
+                    <div class="img-block animate__animated animate__fadeIn">
+                        <img src="{{ item.image.url }}" alt="">
+                    </div>
+                    <div class="info-block animate__animated animate__fadeIn">
+                        <h3>{{ item.name }}</h3>
+                        <h5>Цвет {{ item.color }}</h5>
+                        <p>Цена {{ item.price }}</p>
+                    </div>
+                </a>
+                <button class="add-cart animate__animated animate__fadeIn">В корзину</button>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

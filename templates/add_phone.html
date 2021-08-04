@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.name }}
+        {{ form.color }}
+        {{ form.memory }}
+        {{ form.price }}
+        {{ form.image }}
+        {{ form.description }}
+        {{ form.category }}
+        <button type="submit" class="add">Добавить</button>
+    </form>
+{% endblock %}

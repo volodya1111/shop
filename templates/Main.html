@@ -1,0 +1,63 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+
+    <div class="wrapper">
+        {% for item in phones %}
+
+            <div class="item animate__animated animate__fadeIn">
+                <a class="shop-item" href="{% url 'phone-detail' item.id %}">
+                    <div class="img-block animate__animated animate__fadeIn">
+                        <img src="{{ item.image.url }}" alt="">
+                    </div>
+                    <div class="info-block animate__animated animate__fadeIn">
+                        <h3>{{ item.name }}</h3>
+                        <h5>Цвет {{ item.color }}</h5>
+                        <p>Цена {{ item.price }}</p>
+                    </div>
+                </a>
+                <button class="add-cart animate__animated animate__fadeIn">В корзину</button>
+            </div>
+
+        {% endfor %}
+
+
+
+        {% for item in laptops %}
+            <div class="item animate__animated animate__fadeIn">
+                <a class="shop-item" href="{% url 'laptop-detail' item.id %}">
+                    <div class="img-block">
+                        <img src="{{ item.image.url }}" alt="">
+                    </div>
+                    <div class="info-block">
+                        <h3>{{ item.name }}</h3>
+                        <h5>Цвет {{ item.color }}</h5>
+                        <p>Цена {{ item.price }}</p>
+                    </div>
+                </a>
+                <button class="add-cart">В корзину</button>
+            </div>
+        {% endfor %}
+
+
+
+        {% for item in watches %}
+            <div class="item animate__animated animate__fadeIn">
+                <a class="shop-item" href="{% url 'watch-detail' item.id %}">
+                    <div class="img-block">
+                        <img src="{{ item.image.url }}" alt="">
+                    </div>
+                    <div class="info-block">
+                        <h3>{{ item.name }}</h3>
+                        <h5>Цвет {{ item.color }}</h5>
+                        <p>Цена {{ item.price }}</p>
+                    </div>
+                </a>
+                <button class="add-cart">В корзину</button>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
